@@ -1,19 +1,19 @@
 import java.util.LinkedList;
 
-// 符合老師投影片：class MyStack<T> extends LinkedList<T>
+// 使用 JCF 的 LinkedList 來實作自己的 Stack（不使用 java.util.Stack）
 class MyStack<T> extends LinkedList<T> {
 
-    // 把元素放到 Stack 最上面（用 LinkedList 的尾巴當「頂端」）
+    // 放入一個元素到 Stack 最上面（用 LinkedList 的尾巴當頂端）
     public void push(T item) {
-        this.addLast(item);
+        addLast(item);
     }
 
     // 從 Stack 最上面取出元素並回傳
     public T pop() {
-        return this.removeLast();
+        return removeLast();
     }
 
-    // Stack 是否為空（這裡其實可以不用 override，但依照老師給的函式名稱寫一次）
+    // Stack 是否為空
     @Override
     public boolean isEmpty() {
         return super.isEmpty();
@@ -27,7 +27,7 @@ class MyStack<T> extends LinkedList<T> {
 }
 
 
-// 我的Junit測試會測這個Object，這邊以下請不要修改
+//我的Junit測試會測這個Object，這邊以下請不要修改
 //---------------------------------------------------------------------------------
 class Person {
     private String name;
